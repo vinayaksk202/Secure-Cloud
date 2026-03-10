@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureCloud | Hybrid Encrypted Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="intro">
+      <div class="intro-content">
+         <img src="assets/images/cloud.png" id="introLogo" alt="logo">
+         <h1 id="introText">SecureCloud</h1>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"> SecureCloud</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="closeFeatures()">Home</a></li>
+            <li><a href="#" onclick="openFeatures(); return false;">Features</a></li>
+            <li><a href="login.html">Login</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- HERO / HOME -->
+<section class="hero hero-bg" id="home">
+    <h1>Hybrid Encrypted Cloud Storage</h1>
+    <p>
+        A secure multi-cloud storage system using
+        <span>Hybrid Encryption</span> and
+        <span>Deduplication</span>.
+    </p>
+
+    <a href="login.html" class="primary-btn-link">
+        <button class="primary-btn">Get Started</button>
+    </a>
+</section>
+
+<!-- FULL SCREEN FEATURES -->
+<section class="features-full" id="featuresPage">
+    <div class="features-content">
+        <h1>Core Features</h1>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🔐 Hybrid Encryption</h3>
+                <p>AES encrypts data and RSA secures keys.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📦 Deduplication</h3>
+                <p>Prevents duplicate encrypted file storage.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>☁ Multi-Cloud Support</h3>
+                <p>Google Drive, AWS S3, Dropbox.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📂 Smart File Organization</h3>
+                <p>Arrange files by type, size, and date.</p>
+            </div>
+        </div>
+
+        <button class="primary-btn back-btn" onclick="closeFeatures()">
+            Back to Home
+        </button>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SecureCloud | Micro Project</p>
+    </footer>
+
+    <script>
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        const intro = document.getElementById("intro");
+
+        intro.style.opacity = "0";
+        intro.style.transition = "opacity 0.8s ease";
+
+        setTimeout(function() {
+            intro.style.display = "none";
+        }, 800);
+
+      }, 3000);
+    });
+    </script>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
