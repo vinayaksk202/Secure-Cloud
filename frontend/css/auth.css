@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b1a2a, #050816);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-box {
+    background: #050816;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+    text-align: center;
+}
+
+.auth-box h2 {
+    color: #00f2ff;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* Tabs */
+.tab-buttons {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: #00ff9c;
+    border-bottom: 2px solid #00ff9c;
+}
+
+/* Forms */
+.form {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.form.active {
+    display: block;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #0b0f1a;
+    border: 1px solid #1f2a48;
+    border-radius: 8px;
+    color: white;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #00f2ff;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #00f2ff, #00ff9c);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 50px; /* space for eye */
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #aaa;
+    z-index: 10; /* 🔥 prevents disappearing */
+}
+
+.toggle-password:hover {
+    color: #00f5c4;
+}
+.material-icons {
+    font-size: 22px;
+}
+.password-instructions {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+
+}
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s ease;
+    background: #111;
+    color: white;
+}
+
+.form-group input.error {
+    border: 1px solid #ff4d4d;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    min-width: 280px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.toast.success {
+    background: linear-gradient(90deg, #00c853, #00e676);
+}
+
+.toast.error {
+    background: linear-gradient(90deg, #d50000, #ff5252);
+}
+
+.toast.warning {
+    background: linear-gradient(90deg, #ff9800, #ffc107);
+}
+
+.toast.info {
+    background: linear-gradient(90deg, #2196f3, #64b5f6);
+}
+
+.toast .close-btn {
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.back-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #00f2ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    color: #00ff9c;
+    transform: translateX(-3px);
+}
+
+
+
+
+
+
+
