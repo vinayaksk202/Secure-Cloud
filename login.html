@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureCloud | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="toast-container"></div>
+    <a href="index.html" class="back-home">← Go back to Home</a>
+
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <p class="subtitle">Hybrid Encrypted Cloud Storage</p>
+
+            <!-- Tabs -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showLogin()">Login</button>
+                <button class="tab-btn" onclick="showRegister()">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form active">
+
+                <!-- Username -->
+                <div class="form-group">
+                   <input id="loginUsername" type="text" placeholder="Username" required>
+                   <small class="error-message" id="loginUsernameError"></small>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                   <div class="password-wrapper">
+                       <input type="password" id="loginPassword" placeholder="Password" required>
+
+                       <span class="toggle-password"
+                          onclick="togglePassword('loginPassword', this)">
+                          <span class="material-icons">visibility</span>
+                       </span>
+                   </div>
+
+                   <small class="error-message" id="loginPasswordError"></small>
+               </div>
+
+               <button type="submit" class="primary-btn">Login</button>
+           </form>
+
+
+            <!-- Register Form -->
+            <form id="registerForm" class="form">
+
+                <!-- Username -->
+                <div class="form-group">
+                   <input id="registerUsername" type="text" placeholder="Username" required>
+                   <small class="error-message" id="registerUsernameError"></small>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                  <div class="password-wrapper">
+                      <input type="password" id="registerPassword" placeholder="Password" required>
+
+                      <span class="toggle-password"
+                         onclick="togglePassword('registerPassword', this)">
+                         <span class="material-icons">visibility</span>
+                      </span>
+                   </div>
+
+                   <small class="error-message" id="registerPasswordError"></small>
+               </div>
+
+               <button type="submit" class="primary-btn">Create Account</button>
+           </form>
+
+
+
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
