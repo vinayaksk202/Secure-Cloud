@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureCloud | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Success Modal -->
+<div id="successModal" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-icon">✔</div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalMessage"></p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+    </div>
+</div>
+<!-- Confirm Delete Modal -->
+<div id="confirmModal" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-icon" style="background:#ff5252;">!</div>
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you want to delete this file?</p>
+
+        <div style="margin-top:20px;">
+            <button onclick="confirmDelete()" class="modal-btn" style="background:#ff5252;">Yes</button>
+            <button onclick="closeConfirm()" class="modal-btn" style="background:#555; margin-left:10px;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Hybrid Encryption</h2>
+        <ul>
+            <li onclick="showSection('upload')">Upload File</li>
+            <li onclick="showSection('files')">My Files</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Storage Usage -->
+        <div class="storage-box">
+            <h3>Storage Used</h3>
+            <div class="progress-bar">
+                <div class="progress" id="storageProgress"></div>
+            </div>
+            <p id="storageText">0 MB / 100 MB</p>
+        </div>
+
+        <!-- Upload Section -->
+        <section id="upload" class="section active">
+            <h2>Upload & Encrypt File</h2>
+            <input type="file" id="fileInput">
+            <button onclick="uploadFile()">Upload</button>
+        </section>
+
+
+        <!-- Files Section -->
+        <section id="files" class="section">
+            <h2>Uploaded Files</h2>
+            <!-- 🔽 File Type Filter -->
+            <div style="margin-bottom: 15px;">
+              <label>Filter by Type:</label>
+              <select id="fileFilter">
+                  <option value="all">All Files</option>
+                  <option value="png">PNG</option>
+                  <option value="jpg">JPG</option>
+                  <option value="jpeg">JPEG</option>
+                  <option value="pdf">PDF</option>
+                  <option value="docx">DOCX</option>
+                  <option value="mp4">MP4</option>
+                  <option value="txt">TXT</option>
+              </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Size (MB)</th>
+                        <th>Download</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="fileTableBody">
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
