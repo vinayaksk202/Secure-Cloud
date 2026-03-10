@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b1a2a, #050816);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Layout */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 240px;
+    background: #050816;
+    padding: 30px 20px;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);
+}
+
+.sidebar h2 {
+    color: #00f2ff;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    color: #aaa;
+}
+
+.sidebar ul li:hover {
+    background: rgba(0, 242, 255, 0.15);
+    color: #00ff9c;
+}
+
+/* ================= MAIN ================= */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* Glass Card */
+.section,
+.storage-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 8px 32px rgba(0, 242, 255, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.03);
+
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section h2 {
+    color: #00f2ff;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #0b0f1a;
+    border: 1px solid #1f2a48;
+    border-radius: 8px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00f2ff;
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #00f2ff, #00ff9c);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ================= STORAGE ================= */
+.progress-bar {
+    height: 12px;
+    background: #1f2a48;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.progress {
+    height: 12px;
+    width: 0%;
+    background: linear-gradient(90deg, #00f2ff, #00ff9c);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    text-align: left;
+    color: #00f2ff;
+    padding-bottom: 10px;
+}
+
+td {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Modal Box */
+.modal-box {
+    background: #1b2338;
+    padding: 40px 30px;
+    width: 380px;
+    text-align: center;
+    border-radius: 15px;
+    position: relative;
+    animation: popIn 0.3s ease;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Green circle icon */
+.modal-icon {
+    width: 70px;
+    height: 70px;
+    background: #4CAF50;
+    color: white;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.modal-box h2 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #00ff9c;
+}
+
+.modal-btn {
+    margin-top: 20px;
+    background: #4CAF50;
+    border: none;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-btn:hover {
+    background: #43a047;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.modal-box p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+
